@@ -2,7 +2,7 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <nav className="fixed top-5 left-1/2 z-50 w-[92%] max-w-6xl -translate-x-1/2 rounded-2xl border border-white/10 bg-white/[0.05] px-6 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl">
+    <nav className="fixed  left-1/2 z-10 w-[100%]  -translate-x-1/2 rounded-2xl border border-white/10 bg-white/[0.05] px-6 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl">
       
       <div className="flex items-center justify-between">
 
