@@ -1,165 +1,169 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
-    number: '01',
-    title: 'BMW Website',
-    category: 'Luxury Automotive',
+    id: '01',
+    title: 'Mr. Pizza & Momos',
+    category: 'FOOD / E-COMMERCE',
     description:
-      'A premium automotive website focused on delivering a powerful and immersive digital experience for luxury car enthusiasts.',
-    tags: ['React', 'Tailwind CSS', 'Framer Motion'],
+      'A fast-food restaurant web app featuring an interactive digital menu, category filters, cart functionality, and direct WhatsApp order booking UI.',
+    tags: ['React', 'Tailwind CSS', 'Framer Motion', 'UI/UX'],
+    liveUrl: 'https://mr-pizza-and-momose-website.vercel.app/', // Replace with your link
+    githubUrl: 'https://github.com/ayushchaurasiya70', // Replace with your repo
+    status: 'Live'
   },
   {
-    number: '02',
-    title: 'AI Landing Page UI',
-    category: 'AI / SaaS',
+    id: '02',
+    title: 'Immersive Gaming Website',
+    category: 'GAMING / INTERACTIVE',
     description:
-      'A modern AI-focused landing page UI designed with a clean interface, futuristic visuals, and a strong conversion-focused layout.',
-    tags: ['React', 'Tailwind CSS', 'UI/UX'],
+      'High-octane gaming website inspired by modern web layouts, re-architected with custom UI components, smooth scroll animations, and dynamic media galleries.',
+    tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Custom UI'],
+    liveUrl: 'https://your-gaming-site.vercel.app',
+    githubUrl: 'https://github.com/ayushchaurasiya70',
+    status: 'Live'
   },
   {
-    number: '03',
-    title: '3D Website',
-    category: '3D Experience',
+    id: '03',
+    title: 'EveryGO - Super App',
+    category: 'E-COMMERCE / TAXI / FOOD',
     description:
-      'An upcoming immersive 3D web experience designed to push the boundaries of interactive websites and modern web design.',
-    tags: ['React', 'Three.js', '3D'],
-    comingSoon: true,
-  },
-  {
-    number: '04',
-    title: 'Gaming Website',
-    category: 'Gaming',
-    description:
-      'A visually engaging gaming website built around bold visuals, immersive layouts, and an energetic digital experience.',
-    tags: ['React', 'Tailwind CSS', 'Animations'],
-  },
-  {
-    number: '05',
-    title: 'Movie Website',
-    category: 'Entertainment',
-    description:
-      'A cinematic movie platform concept designed to showcase movies with an engaging interface and smooth browsing experience.',
-    tags: ['React', 'API', 'Tailwind CSS'],
-  },
-]
+      'All-in-one ecosystem integrating food delivery, e-commerce, and cab booking under one high-speed platform with real-time tracking architecture.',
+    tags: ['React', 'Tailwind CSS', 'Redux', 'Coming Soon'],
+    liveUrl: '#',
+    githubUrl: '#',
+    status: 'Coming Soon'
+  }
+];
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="relative overflow-hidden bg-zinc-950 px-6 py-32 text-zinc-100"
-    >
-      {/* Background Soft Ambient Yellow Glows */}
-      <div className="pointer-events-none absolute left-[-10%] top-[20%] h-[450px] w-[450px] rounded-full bg-yellow-500/10 blur-[140px]" />
-      <div className="pointer-events-none absolute right-[-5%] bottom-[10%] h-[400px] w-[400px] rounded-full bg-amber-400/10 blur-[140px]" />
+    <section id="projects" className="bg-[#0a0a0c] text-white py-20 px-6 md:px-16 relative overflow-hidden">
+      {/* Background Yellow Glow */}
+      <div className="absolute top-1/4 left-0 w-80 h-80 bg-yellow-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="mb-20"
-        >
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.4em] text-yellow-400">
-            My Work
-          </p>
-
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <h2 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Selected{' '}
-              <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                Projects.
-              </span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <span className="text-yellow-400 font-semibold tracking-widest text-xs uppercase mb-1 block">
+              // Portfolio Showcase
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+              Selected <span className="text-yellow-400">Projects.</span>
             </h2>
+          </motion.div>
 
-            <p className="max-w-md text-base leading-relaxed text-zinc-400">
-              A collection of digital experiences I've built, designed, and
-              experimented with while exploring modern web development.
-            </p>
-          </div>
-        </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="text-zinc-400 max-w-md text-sm leading-relaxed"
+          >
+            A curated collection of digital experiences I built using modern web technologies.
+          </motion.p>
+        </div>
 
-        {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.number}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.1,
-              }}
-              whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/80 shadow-lg transition-all duration-300 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-500/10"
-            >
-              {/* Image Preview Container */}
-              <div className="relative flex h-72 items-center justify-center overflow-hidden border-b border-zinc-800/80 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900">
-                <div className="absolute inset-0 bg-yellow-400/0 transition-all duration-500 group-hover:bg-yellow-400/5" />
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => {
+            const isComingSoon = project.status === 'Coming Soon';
 
-                <span className="absolute left-6 top-6 text-sm font-bold text-yellow-400">
-                  {project.number}
-                </span>
-
-                {project.comingSoon ? (
-                  <div className="relative text-center">
-                    <div className="mb-3 text-5xl font-black tracking-tighter text-zinc-700">
-                      3D
-                    </div>
-
-                    <span className="rounded-full border border-yellow-500/30 bg-yellow-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-yellow-400">
-                      Coming Soon
-                    </span>
-                  </div>
-                ) : (
-                  <span className="text-7xl font-black tracking-tighter text-zinc-800 transition-all duration-500 group-hover:text-yellow-400/20">
-                    {project.title.split(' ')[0]}
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="bg-[#121216] border border-zinc-800 rounded-2xl overflow-hidden hover:border-yellow-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+              >
+                {/* Top Banner / Card Header */}
+                <div className="relative h-44 bg-zinc-900/60 flex items-center justify-center border-b border-zinc-800/80 p-4">
+                  <span className="absolute top-4 left-4 text-yellow-400 font-mono font-bold text-base">
+                    {project.id}
                   </span>
-                )}
+                  
+                  <span className={`absolute top-4 right-4 text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider ${
+                    isComingSoon 
+                      ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/30' 
+                      : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                  }`}>
+                    {project.status}
+                  </span>
 
-                {/* Arrow Icon Button */}
-                <div className="absolute bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-xl text-zinc-300 shadow-md transition-all duration-300 group-hover:border-yellow-400 group-hover:bg-yellow-400 group-hover:text-zinc-950">
-                  ↗
+                  <h4 className="text-2xl font-black text-zinc-700 tracking-wider uppercase select-none group-hover:text-yellow-500/20 transition-colors duration-300">
+                    {project.title.split(' ')[0]}
+                  </h4>
                 </div>
-              </div>
 
-              {/* Card Details */}
-              <div className="p-8">
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-yellow-400">
-                  {project.category}
-                </p>
-
-                <h3 className="text-3xl font-bold text-white transition-colors duration-300 group-hover:text-yellow-400">
-                  {project.title}
-                </h3>
-
-                <p className="mt-4 leading-relaxed text-zinc-400">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-zinc-800 bg-zinc-950 px-3 py-1.5 text-xs font-medium text-zinc-300 shadow-sm"
-                    >
-                      {tag}
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div>
+                    <span className="text-yellow-500 text-[11px] font-semibold tracking-wider uppercase mb-1 block">
+                      {project.category}
                     </span>
-                  ))}
+                    <h3 className="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-zinc-400 text-xs mt-2 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {project.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[10px] bg-zinc-900 text-zinc-300 px-2.5 py-0.5 rounded border border-zinc-800 font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="pt-4 border-t border-zinc-800/60 flex items-center justify-between text-xs">
+                    {!isComingSoon ? (
+                      <>
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-yellow-400 hover:text-yellow-300 flex items-center gap-1"
+                        >
+                          Live Preview <span>↗</span>
+                        </a>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-zinc-400 hover:text-white"
+                        >
+                          GitHub Code
+                        </a>
+                      </>
+                    ) : (
+                      <span className="text-zinc-500 italic font-mono text-[11px]">
+                        In Development...
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default Projects
