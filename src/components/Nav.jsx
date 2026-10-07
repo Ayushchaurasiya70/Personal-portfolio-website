@@ -37,6 +37,13 @@ const Nav = () => {
             Projects
           </a>
 
+           <a
+            href="#prices"
+            className="text-sm font-medium text-white/70 transition-all duration-300 hover:text-purple-400"
+          >
+            Prices
+          </a>
+
           <a
             href="#skills"
             className="text-sm font-medium text-white/70 transition-all duration-300 hover:text-purple-400"
