@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-// import Wave from './Wave' // Uncomment if you are using the Wave component
+import bgVideo from '/public/bg.mp4' // 🎬 Direct import for Vite bundling
 
 const Hero = () => {
   return (
@@ -17,8 +17,8 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          {/* BASE_URL dynamic path for GitHub Pages */}
-          <source src={`${import.meta.env.BASE_URL}bg.mp4`} type="video/mp4" />
+          {/* Imported video variable pass kiya hai */}
+          <source src={bgVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
