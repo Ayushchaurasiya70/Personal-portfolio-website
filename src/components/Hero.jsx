@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import bgVideo from '/public/bg.mp4' // 🎬 Direct import for Vite bundling
+import bgVideo from '../assets/bg.mp4' // 🎬 Video imported directly from src/assets
 
 const Hero = () => {
   return (
@@ -17,7 +17,7 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          {/* Imported video variable pass kiya hai */}
+          {/* Direct imported variable used here */}
           <source src={bgVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
