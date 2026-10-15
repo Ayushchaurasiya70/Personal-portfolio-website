@@ -1,27 +1,28 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Wave from './Wave'
+// import Wave from './Wave' // Uncomment if you are using the Wave component
 
 const Hero = () => {
   return (
     <section
       id="home"
-     
       className="relative h-[100vh] top-[75px] w-full overflow-hidden bg-black px-6 pt-16 text-white flex items-center justify-center"
     >
-    
-      <div className="absolute inset-0 z-0 h-full w-full pointer-events-auto">
-        <Wave 
-          enabledWaves={["top", "middle", "bottom"]}
-          lineCount={8}
-          lineDistance={8}
-          bendRadius={8}
-          bendStrength={-2}
-          interactive={true}
-          parallax={true}
-          animationSpeed={1}
-          linesGradient={["#F43F5E", "#FB923C", "#FBBF24"]}
-        />
+      {/* 🎬 BACKGROUND VIDEO & GRADIENT OVERLAY */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* 🎨 Bottom-to-Top Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
       </div>
 
       {/* 🎯 MAIN HERO CONTENT CONTAINER */}
