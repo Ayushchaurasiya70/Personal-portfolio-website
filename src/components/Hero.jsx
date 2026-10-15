@@ -17,7 +17,8 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/bg.mp4" type="video/mp4" />
+          {/* BASE_URL dynamic path for GitHub Pages */}
+          <source src={`${import.meta.env.BASE_URL}bg.mp4`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
